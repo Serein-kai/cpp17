@@ -23,7 +23,9 @@ int main()
     }else{
         cout<<"您输入的是两个相同的正数。"<<endl;
     }
-    
+    //cout<<"大"<<((a+b)+abs(a-b)) / 2<<endl;
+    //cout<<"小"<<(a+b-abs(a-b)) / 2 <<endl;
+
 
     return 0;
 }
