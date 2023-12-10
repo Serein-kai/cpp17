@@ -11,6 +11,24 @@ using namespace std;
 
 int main()
 {
+    float a{};
+    int mf{};
+    int mf25{};
+    int mf10{};
+    int mf5{};
+    int mf1{};
+
+    cout<<"请输入介于0美元和10美元之间的钱款（允许使用小数）：";
+    cin>>a;
+    mf=a*100;
+    mf25=mf/25;
+    mf10=(mf%25)/10;
+    mf5=((mf%25)%10)/5;
+    mf1=((mf%25)%10)%5;
+
+    cout<<"you have "<<a<<(a==1?" dolla":" dollars")<<" = "<<mf25<<"个25美分+"<<mf10<<"个10美分+"<<mf5<<"个5美分+"<<mf1<<"个1美分"<<endl;
+
+
 
     return 0;
 }
