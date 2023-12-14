@@ -31,8 +31,8 @@ int main()
             break;
         }
     }
-    cout<<"所有数的总和为："<<sum<<endl
-    <<"平均数为:"<<fixed<<setprecision(6)<<(static_cast<double>(sum)/num)<<endl;
+    cout<<"所有数的总和为："<<sum<<endl<<"平均数为:"
+    <<fixed<<setprecision(6)<<(static_cast<double>(sum)/num)<<endl;
 
     return 0;
 }
