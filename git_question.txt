@@ -1,0 +1,59 @@
+question 1:
+从命令行创建一个新的仓库:
+echo "# first-repo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:geekhall-laoyang/first-repo.git
+git push -u origin main
+
+question 2：
+从命令行推送现有存储库:
+git remote add origin git@github.com:geekhall-laoyang/first-repo.git
+git branch -M main
+git push -u origin main
+
+
+question 3:
+Ubuntu在将本地代码提交远程时显示：whk@whk-virtual-machine:~/program/C++17$ git push -u origin master
+git@github.com: Permission denied (publickey).
+fatal: 无法读取远程仓库。
+
+这个问题是因为你没有正确配置SSH密钥。你需要按照以下步骤操作：
+1. 首先，在本地计算机上生成SSH密钥对。打开终端，输入以下命令：
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+将`your_email@example.com`替换为你的GitHub邮箱地址。然后按照提示操作，可以选择默认的文件路径和设置密码。
+
+2. 将生成的公钥添加到GitHub账户中。打开~/.ssh/id_rsa.pub文件，复制其中的内容。然后登录到GitHub，点击右上角的头像，选择“Settings”，在左侧菜单中选择“SSH and GPG keys”，点击“New SSH key”，将刚刚复制的公钥内容粘贴到“Key”文本框中，点击“Add SSH key”。
+
+3. 测试SSH连接。在终端中输入以下命令：
+ssh -T git@github.com
+如果看到类似`Hi username! You've successfully authenticated, but GitHub does not provide shell access.`的提示，说明SSH连接成功。
+
+4. 现在你可以正常提交代码了。在项目目录下，执行以下命令：
+git remote add origin git@github.com:username/repo.git
+git push -u origin master
+将`username`和`repo`替换为你的GitHub用户名和仓库名。
+
+
+question 4:
+whk@whk-virtual-machine:~/program/C++17$ git remote add origin git@github.com:Serein-kai/cpp17.git
+error: 远程 origin 已经存在。
+
+这个错误意味着您尝试添加一个名为"origin"的远程仓库，但是在您的本地存储库中已经存在一个名为"origin"的远程仓库。通常情况下，您只需将远程仓库添加一次。要解决这个问题，您可以尝试以下步骤之一：
+
+1移除已存在的 origin 远程仓库然后重新添加：
+git remote rm origin
+git remote add origin git@github.com:Serein-kai/cpp17.git
+
+2检查当前的远程仓库配置，确保您没有意外地添加了相同的远程仓库：
+git remote -v
+如果显示了多个 origin，请选择删除一个，然后重新添加。
+
+3如果您只是想更改现有远程仓库的URL，您可以使用以下命令：
+git remote set-url origin git@github.com:Serein-kai/cpp17.git
+这将更新现有的 origin 远程仓库的URL，而不需要删除它。
+
+通过执行以上任一步骤，您应该能够解决问题并成功将远程仓库添加到您的本地存储库中。
+
