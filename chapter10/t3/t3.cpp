@@ -5,16 +5,16 @@
 让 print_that()调用在名称空间 print2 中声明的函数。运行程序，验证是否调用了正确的函数。
 */
 
+#include "printthis.h"
+#include "printthat.h"
+#include "print.h"
+
 #include <iostream>
-#include <string>
-#include <string_view>
-
 using namespace std;
-
-
 
 int main()
 {
+    print_this("使用了函数print_this()");
+    print_that("使用了函数print_that()");
 
-    return 0;
 }

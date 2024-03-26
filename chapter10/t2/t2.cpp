@@ -3,16 +3,15 @@
 print_that()后，输出这个变量的值。
 */
 
+#include "printthis.h"
+#include "printthat.h"
+#include "print.h"//call_count
 #include <iostream>
-#include <string>
-#include <string_view>
-
 using namespace std;
-
-
 
 int main()
 {
-
-    return 0;
+  print_this("使用了函数print_this()");
+  print_that("使用了函数print_that().");
+  cout << "print()被调用的次数为：" << call_count<< endl;
 }
